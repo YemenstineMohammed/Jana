@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>♥ رسالة حب لجنى ♥</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      font-family: 'Cairo', sans-serif;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #fff;
+      margin-top: 40px;
+      text-shadow: 2px 2px 4px #000;
+      animation: pulse 2s infinite;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin: 20px;
+      color: #fff;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 6s linear infinite;
+    }
+
+    .heart::before, .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        bottom: 0;
+        left: calc(100% * var(--i));
+        opacity: 1;
+      }
+      100% {
+        bottom: 100%;
+        left: calc(100% * var(--i) + 20px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .meter {
+      margin-top: 30px;
+      width: 80%;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .meter > div {
+      height: 30px;
+      width: 100%;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+      text-align: center;
+      color: #fff;
+      line-height: 30px;
+      font-weight: bold;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://github.com/YemenstineMohammed/Jana/blob/main/sight.mp3 " type="audio/mpeg">
+    متصفحك لا يدعم تشغيل الصوت.
+  </audio>
+
+  <h1>♥ إلى جنى، حُبًّا لا يعرف البُعد ♥</h1>
+  <p>مهما فرقتنا المسافات، يبقى حبكِ في قلبي لا يعرف النهاية.</p>
+  <p>أنتِ النور في أيامي، والدفء في وحدتي، والنبض في قلبي 💖</p>
+  <p>كل حرف في اسمك يرقص حبًّا بداخلي.</p>
+
+  <div class="meter">
+    <div style="width: 100%;">💘 نسبة حُبي لك: 100% 💘</div>
+  </div>
+
+  <!-- قلوب متطايرة -->
+  <script>
+    for(let i = 0; i < 30; i++) {
+      let heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.setProperty('--i', Math.random());
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
